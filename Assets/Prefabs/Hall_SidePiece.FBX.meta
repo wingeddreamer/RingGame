@@ -1,0 +1,227 @@
+fileFormatVersion: 2
+guid: 831becae55fde72409e171f2bc280aa5
+timeCreated: 1465747174
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Ceiling
+    100004: CentralLight
+    100006: CentralRing
+    100008: CentralRing001
+    100010: CentralRing002
+    100012: CentralRing003
+    100014: Fspot002
+    100016: Fspot003
+    100018: Fspot004
+    100020: Fspot005
+    100022: Fspot006
+    100024: Fspot007
+    100026: Fspot008
+    100028: Fspot009
+    100030: Fspot011
+    100032: Fspot012
+    100034: Fspot013
+    100036: Fspot014
+    100038: Fspot015
+    100040: Fspot016
+    100042: Fspot017
+    100044: Fspot018
+    100046: Object001
+    100048: Object002
+    100050: Object003
+    100052: Object004
+    100054: Object005
+    100056: Omni002
+    100058: Omni003
+    100060: Omni004
+    100062: Omni005
+    100064: Omni006
+    100066: Omni007
+    100068: Omni008
+    100070: Omni009
+    100072: Omni010
+    100074: Omni011
+    100076: Omni012
+    100078: Omni013
+    100080: SidePiece
+    100082: SidePiece001
+    100084: SidePiece002
+    100086: SidePiece003
+    100088: SidePiece004
+    100090: SidePiece005
+    100092: SidePiece006
+    100094: SidePiece007
+    400000: //RootNode
+    400002: Ceiling
+    400004: CentralLight
+    400006: CentralRing
+    400008: CentralRing001
+    400010: CentralRing002
+    400012: CentralRing003
+    400014: Fspot002
+    400016: Fspot003
+    400018: Fspot004
+    400020: Fspot005
+    400022: Fspot006
+    400024: Fspot007
+    400026: Fspot008
+    400028: Fspot009
+    400030: Fspot011
+    400032: Fspot012
+    400034: Fspot013
+    400036: Fspot014
+    400038: Fspot015
+    400040: Fspot016
+    400042: Fspot017
+    400044: Fspot018
+    400046: Object001
+    400048: Object002
+    400050: Object003
+    400052: Object004
+    400054: Object005
+    400056: Omni002
+    400058: Omni003
+    400060: Omni004
+    400062: Omni005
+    400064: Omni006
+    400066: Omni007
+    400068: Omni008
+    400070: Omni009
+    400072: Omni010
+    400074: Omni011
+    400076: Omni012
+    400078: Omni013
+    400080: SidePiece
+    400082: SidePiece001
+    400084: SidePiece002
+    400086: SidePiece003
+    400088: SidePiece004
+    400090: SidePiece005
+    400092: SidePiece006
+    400094: SidePiece007
+    2300000: //RootNode
+    2300002: Ceiling
+    2300004: CentralLight
+    2300006: CentralRing
+    2300008: CentralRing001
+    2300010: CentralRing002
+    2300012: CentralRing003
+    2300014: Object001
+    2300016: Object002
+    2300018: Object003
+    2300020: Object004
+    2300022: Object005
+    2300024: SidePiece
+    2300026: SidePiece001
+    2300028: SidePiece002
+    2300030: SidePiece003
+    2300032: SidePiece004
+    2300034: SidePiece005
+    2300036: SidePiece006
+    2300038: SidePiece007
+    3300000: //RootNode
+    3300002: Ceiling
+    3300004: CentralLight
+    3300006: CentralRing
+    3300008: CentralRing001
+    3300010: CentralRing002
+    3300012: CentralRing003
+    3300014: Object001
+    3300016: Object002
+    3300018: Object003
+    3300020: Object004
+    3300022: Object005
+    3300024: SidePiece
+    3300026: SidePiece001
+    3300028: SidePiece002
+    3300030: SidePiece003
+    3300032: SidePiece004
+    3300034: SidePiece005
+    3300036: SidePiece006
+    3300038: SidePiece007
+    4300000: SidePiece
+    4300002: Ceiling
+    4300004: CentralRing
+    4300006: SidePiece001
+    4300008: SidePiece002
+    4300010: SidePiece003
+    4300012: SidePiece004
+    4300014: SidePiece005
+    4300016: SidePiece006
+    4300018: SidePiece007
+    4300020: Object001
+    4300022: Object002
+    4300024: Object003
+    4300026: Object004
+    4300028: CentralRing001
+    4300030: CentralRing002
+    4300032: CentralRing003
+    4300034: CentralLight
+    4300036: Object005
+    4300038: SidePiece_ LowRes
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
