@@ -70,6 +70,7 @@
     <Compile Include="Assets\ColPointFinder.cs" />
     <Compile Include="Assets\EnterExitPlayMode.cs" />
     <Compile Include="Assets\LightCoatControl.cs" />
+    <Compile Include="Assets\ParticleControl.cs" />
     <Compile Include="Assets\RingCol.cs" />
     <Compile Include="Assets\RingControl.cs" />
     <Compile Include="Assets\RingRangeCol.cs" />

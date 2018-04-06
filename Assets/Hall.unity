@@ -6365,7 +6365,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 19b2e1e51108ae844905104e66c096a7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19b2e1e51108ae844905104e66c096a7, type: 3}
@@ -6383,6 +6383,7 @@ GameObject:
   - 114: {fileID: 784163911}
   - 114: {fileID: 784163912}
   - 114: {fileID: 784163913}
+  - 114: {fileID: 784163914}
   m_Layer: 0
   m_Name: Script
   m_TagString: Untagged
@@ -6667,6 +6668,19 @@ MonoBehaviour:
   - {fileID: 560164284}
   - {fileID: 2001349352}
   - {fileID: 1731088791}
+--- !u!114 &784163914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 784163907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c205be43100b14289d4fc04c051f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleTypeA: {fileID: 176610, guid: c36d4e86b3293884b9f6146b386a6014, type: 2}
+  particleTypeB: {fileID: 175840, guid: 80fdd8a90b86af9429aa51a663b04924, type: 2}
 --- !u!1 &816610833 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: a94730b048cca784ea4b74c1e03df687, type: 3}
@@ -14368,7 +14382,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2fa92dd539c44b347afe09e060674a47, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 2fa92dd539c44b347afe09e060674a47, type: 3}
       propertyPath: m_CastShadows
