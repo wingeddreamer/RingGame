@@ -77,6 +77,8 @@
     <Compile Include="Assets\Scripts\Multi_Func.cs" />
     <Compile Include="Assets\Scripts\UI_Control.cs" />
     <Compile Include="Assets\Scripts\Zview.cs" />
+    <Compile Include="Assets\ShapeRotator.cs" />
+    <Compile Include="Assets\StrobeLight.cs" />
     <Compile Include="Assets\test.cs" />
     <Compile Include="Assets\zSpace\Core\Samples\CameraNavigationSample.cs" />
     <Compile Include="Assets\zSpace\Core\Samples\StylusEventSample.cs" />
