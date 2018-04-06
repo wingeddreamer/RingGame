@@ -67,20 +67,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ColPointFinder.cs" />
-    <Compile Include="Assets\EnterExitPlayMode.cs" />
-    <Compile Include="Assets\LightCoatControl.cs" />
-    <Compile Include="Assets\LookAtCamera.cs" />
-    <Compile Include="Assets\ParticleControl.cs" />
-    <Compile Include="Assets\RingCol.cs" />
-    <Compile Include="Assets\RingControl.cs" />
-    <Compile Include="Assets\RingRangeCol.cs" />
+    <Compile Include="Assets\ClockControl.cs" />
+    <Compile Include="Assets\Scripts\ColPointFinder.cs" />
+    <Compile Include="Assets\Scripts\EnterExitPlayMode.cs" />
+    <Compile Include="Assets\Scripts\LightCoatControl.cs" />
+    <Compile Include="Assets\Scripts\LookAtCamera.cs" />
     <Compile Include="Assets\Scripts\Multi_Func.cs" />
+    <Compile Include="Assets\Scripts\ParticleControl.cs" />
+    <Compile Include="Assets\Scripts\RingCol.cs" />
+    <Compile Include="Assets\Scripts\RingControl.cs" />
+    <Compile Include="Assets\Scripts\RingRangeCol.cs" />
+    <Compile Include="Assets\Scripts\ShapeRotator.cs" />
+    <Compile Include="Assets\Scripts\StrobeLight.cs" />
     <Compile Include="Assets\Scripts\UI_Control.cs" />
     <Compile Include="Assets\Scripts\Zview.cs" />
-    <Compile Include="Assets\ShapeRotator.cs" />
-    <Compile Include="Assets\StrobeLight.cs" />
-    <Compile Include="Assets\test.cs" />
+    <Compile Include="Assets\Scripts\test.cs" />
     <Compile Include="Assets\zSpace\Core\Samples\CameraNavigationSample.cs" />
     <Compile Include="Assets\zSpace\Core\Samples\StylusEventSample.cs" />
     <Compile Include="Assets\zSpace\Core\Samples\StylusLedSample.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Assets\zSpace\zView\Scripts\ZView.singleton.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Materials\ClockShader.shader" />
     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />

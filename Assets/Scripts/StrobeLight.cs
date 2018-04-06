@@ -15,8 +15,8 @@ public class StrobeLight : MonoBehaviour {
     {
         if (timeInFrame>interval)
         {
-            GetComponent<Light>().intensity = Random.Range(0, 5f);
-            interval = Random.Range(1, 8);
+            GetComponent<Light>().intensity = Random.Range(0, 10f);
+            interval = Random.Range(2, 8);
             timeInFrame = 0;
         }
         timeInFrame++;
