@@ -935,7 +935,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 532f4633e3dd17a428b53a6c9f5553ee, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1011,9 +1011,9 @@ ParticleSystem:
     minMaxState: 0
   speed: 1
   randomSeed: 0
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   moveWithTransform: 1
   scalingMode: 1
   InitialModule:
@@ -1164,7 +1164,7 @@ ParticleSystem:
         rgba: 4278232319
       minMaxState: 2
     startSize:
-      scalar: 1
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3389,7 +3389,7 @@ RectTransform:
   m_Children:
   - {fileID: 999815565}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -3493,7 +3493,7 @@ Transform:
   - {fileID: 2001349351}
   - {fileID: 1177485792}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
 --- !u!1001 &517232686
 Prefab:
   m_ObjectHideFlags: 0
@@ -4093,7 +4093,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 10
 --- !u!4 &600654030 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 831becae55fde72409e171f2bc280aa5, type: 3}
@@ -4832,7 +4832,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 14
 --- !u!114 &784163909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9234,7 +9234,7 @@ Transform:
   - {fileID: 1556443376}
   - {fileID: 211175559}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
 --- !u!1 &1731088788
 GameObject:
   m_ObjectHideFlags: 0
@@ -9463,7 +9463,7 @@ Transform:
   m_Children:
   - {fileID: 1582781837}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 11
 --- !u!1001 &1771324840
 Prefab:
   m_ObjectHideFlags: 0
@@ -11228,7 +11228,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2fa92dd539c44b347afe09e060674a47, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 2fa92dd539c44b347afe09e060674a47, type: 3}
       propertyPath: m_CastShadows
@@ -11531,7 +11531,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &2103375246
 GameObject:
   m_ObjectHideFlags: 0
@@ -11572,7 +11572,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 532f4633e3dd17a428b53a6c9f5553ee, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -11648,9 +11648,9 @@ ParticleSystem:
     minMaxState: 0
   speed: 1
   randomSeed: 0
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   moveWithTransform: 1
   scalingMode: 1
   InitialModule:
@@ -11801,7 +11801,7 @@ ParticleSystem:
         rgba: 4278232319
       minMaxState: 2
     startSize:
-      scalar: 1
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
