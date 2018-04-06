@@ -12,10 +12,10 @@ public class RingControl : MonoBehaviour {
 	}
 	
 	void Update () {
-        if (!RingCol && RingRangeCol)
+        /*if (!RingCol && RingRangeCol)
             GetComponent<Renderer>().material.color = Color.white;
         else
-            GetComponent<Renderer>().material.color = Color.red;
+            GetComponent<Renderer>().material.color = Color.red;*/
     }
 
 }

@@ -6,7 +6,8 @@ public class ClockControl : MonoBehaviour {
     public Material clockMat;
     float totalTime, penaltyTime, redTime;
     float leftTime, dampVel;
-    bool countDown = false, timeOut = false;
+    bool countDown = false;
+    public bool timeOut = false;
 
     public void initializeClock(float inTotalTime, float inPenaltyTime)
     {
@@ -44,7 +45,6 @@ public class ClockControl : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.C)) countDown = true;
         if (Input.GetKeyDown(KeyCode.D)) countDown = false;
-        if (Input.GetKeyDown(KeyCode.E)) exePenalty();
         if (countDown)
             if (leftTime - Time.deltaTime > 0)
                 leftTime -= Time.deltaTime;

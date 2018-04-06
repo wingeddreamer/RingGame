@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ClockControl.cs" />
+    <Compile Include="Assets\Penalty.cs" />
     <Compile Include="Assets\Scripts\ColPointFinder.cs" />
     <Compile Include="Assets\Scripts\EnterExitPlayMode.cs" />
     <Compile Include="Assets\Scripts\LightCoatControl.cs" />
