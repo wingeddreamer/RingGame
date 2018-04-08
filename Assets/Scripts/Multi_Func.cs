@@ -14,8 +14,9 @@ namespace zSpace.Core.Samples
 		public Part[] SatParts;
 		public GameObject[] SidePieces;
 		private ZCore _core = null;
-		//for Camera rotator
-		private float dampedvalue1 = 0, dampedvalue2 = 0, dampV1 = 0, dampV2 = 0;
+        public bool allOK;
+        //for Camera rotator
+        private float dampedvalue1 = 0, dampedvalue2 = 0, dampV1 = 0, dampV2 = 0;
 		[HideInInspector]
 		public GameObject CurrentlyGrabbedObject = null;
 		[HideInInspector]
@@ -86,45 +87,58 @@ namespace zSpace.Core.Samples
 			CamRotator.transform.Rotate (new Vector3 (0.0f, (dampedvalue1 - dampedvalue2) * Time.deltaTime, 0.0f));
 
 
-			//Snapping function
-			if (CurrentlyGrabbedObject != null) {
-				//position angle judgement
-				bool posOK=(Vector3.Distance (grabbedObjectPosition, GrabPart.GhostPart.transform.position) < GrabPart.PositionTolerance);
-				bool angOK = (Quaternion.Angle (grabbedObjectRotation, GrabPart.GhostPart.transform.rotation) < GrabPart.AngleTolerance);
-				bool allOK;
-				if (UI_Control.useAngleCheck)
-					allOK = posOK && angOK;
-				else
-					allOK = posOK;
-				if ( allOK ) {
-					CurrentlyGrabbedObject.transform.position = GrabPart.GhostPart.transform.position;
-					CurrentlyGrabbedObject.transform.eulerAngles = GrabPart.GhostPart.transform.eulerAngles;
-					GhostMat.SetColor ("_TintColor", new Color (0.0f, 1.0f, 0.0f, 0.1f));
-					GrabPart.InTargetPosition = true;
-					if(!lastFrameInpos)	_core.StartTargetVibration(ZCore.TargetType.Primary, 0.1f, 1f, 1, 0.1f);
-					//Update lastframe in position status for stylus vibration
-					lastFrameInpos=true;
-				} else {
-					CurrentlyGrabbedObject.transform.position = grabbedObjectPosition;
-					CurrentlyGrabbedObject.transform.rotation = grabbedObjectRotation;
-					GrabPart.InTargetPosition = false;
-					lastFrameInpos = false;
-				}
-			} else if (LastGrabbedObject != null) {
-				//disalbe further grabbing when in target position
-				if (SatParts [IndexOfLastGrabbedObject].InTargetPosition == true) {
-					if (UI_Control.noMoveInPos) {
-						SatParts [IndexOfLastGrabbedObject].allowGrab = false;
-						en_disableGrab (LastGrabbedObject, false);
-					}
-				} else {
-					//return part to it's original position
-					if (UI_Control.autoReturn) {
-						SatParts [IndexOfLastGrabbedObject].OnWayHome = true;
-						SatParts [IndexOfLastGrabbedObject].RotDampV = 1.0f;
-					}
-				}
-			}
+            //Snapping function
+            if (CurrentlyGrabbedObject != null)
+            {
+                //position angle judgement
+                bool posOK = (Vector3.Distance(grabbedObjectPosition, GrabPart.GhostPart.transform.position) < GrabPart.PositionTolerance);
+                bool angOK = (Quaternion.Angle(grabbedObjectRotation, GrabPart.GhostPart.transform.rotation) < GrabPart.AngleTolerance);
+                
+                if (UI_Control.useAngleCheck)
+                    allOK = posOK && angOK;
+                else
+                    allOK = posOK;
+                if (allOK)
+                {
+                    CurrentlyGrabbedObject.transform.position = GrabPart.GhostPart.transform.position;
+                    CurrentlyGrabbedObject.transform.eulerAngles = GrabPart.GhostPart.transform.eulerAngles;
+                    GhostMat.SetColor("_TintColor", new Color(0.0f, 1.0f, 0.0f, 0.1f));
+                    GrabPart.InTargetPosition = true;
+                    if (!lastFrameInpos) _core.StartTargetVibration(ZCore.TargetType.Primary, 0.1f, 1f, 1, 0.1f);
+                    //Update lastframe in position status for stylus vibration
+                    lastFrameInpos = true;
+                }
+                else
+                {
+                    CurrentlyGrabbedObject.transform.position = grabbedObjectPosition;
+                    CurrentlyGrabbedObject.transform.rotation = grabbedObjectRotation;
+                    GrabPart.InTargetPosition = false;
+                    lastFrameInpos = false;
+                }
+            }
+            else if (LastGrabbedObject != null)
+            {
+                //disalbe further grabbing when in target position
+                if (SatParts[IndexOfLastGrabbedObject].InTargetPosition == true)
+                {
+                    if (UI_Control.noMoveInPos)
+                    {
+                        SatParts[IndexOfLastGrabbedObject].allowGrab = false;
+                        en_disableGrab(LastGrabbedObject, false);
+                    }
+                }
+                else
+                {
+                    //return part to it's original position
+                    if (UI_Control.autoReturn)
+                    {
+                        SatParts[IndexOfLastGrabbedObject].OnWayHome = true;
+                        SatParts[IndexOfLastGrabbedObject].RotDampV = 1.0f;
+                    }
+                }
+            }
+            
+			
 
 			//return objects marked with onWayHome back to their origins
 			for (int i = 0; i < SatParts.Length; i++) {

@@ -54,7 +54,8 @@ namespace zSpace.Core.Samples
 					// Perform a raycast on the entire scene to determine what the
 					// stylus is currently colliding with.
 					RaycastHit hit;
-					if (Physics.Raycast (pose.Position, pose.Direction, out hit)) {
+                        LayerMask mask = 0 << 13| 0 << 12 | 0 << 11 | 0 << 10 | 0 << 8 | 0 << 8| 1<<14;
+                        if (Physics.Raycast (pose.Position, pose.Direction, out hit, mask)) {
 						lightbeamTarget.SetActive (true);
 						// Update the stylus beam length.
 						_stylusBeamLength = hit.distance / _core.ViewerScale;

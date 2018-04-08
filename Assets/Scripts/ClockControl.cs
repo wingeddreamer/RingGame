@@ -8,7 +8,6 @@ public class ClockControl : MonoBehaviour {
     float leftTime, dampVel;
     bool countDown = false;
     public bool timeOut = false;
-
     public void initializeClock(float inTotalTime, float inPenaltyTime)
     {
         totalTime= leftTime = inTotalTime;

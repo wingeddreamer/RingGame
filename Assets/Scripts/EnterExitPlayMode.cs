@@ -17,4 +17,8 @@ public class EnterExitPlayMode : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.B))
             foreach (var part in parts) if (part != null) part.SetBool("Playmode", false);
     }
+
+    public void IsTurnOff(bool isOn) {
+        foreach (var part in parts) if (part != null) part.SetBool("Playmode", isOn);
+    }
 }

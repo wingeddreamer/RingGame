@@ -45,6 +45,34 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _Emission
+        second:
+          m_Texture: {fileID: 2800000, guid: eccd10a2f715ab94ba936f574561ad27, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Specular
+        second:
+          m_Texture: {fileID: 2800000, guid: f89f5259cc42aad43bb51811bd9150a6, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Normal
+        second:
+          m_Texture: {fileID: 2800000, guid: 7a507b8e1337f764a9aa57e22f740550, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _EmissionPenalty
+        second:
+          m_Texture: {fileID: 2800000, guid: 82f809cd3d1fe484da6a36b43874edf1, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _OcclusionMap
         second:
           m_Texture: {fileID: 0}
@@ -78,34 +106,6 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Emission
-        second:
-          m_Texture: {fileID: 2800000, guid: eccd10a2f715ab94ba936f574561ad27, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Specular
-        second:
-          m_Texture: {fileID: 2800000, guid: f89f5259cc42aad43bb51811bd9150a6, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Normal
-        second:
-          m_Texture: {fileID: 2800000, guid: 7a507b8e1337f764a9aa57e22f740550, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _EmissionPenalty
-        second:
-          m_Texture: {fileID: 2800000, guid: 82f809cd3d1fe484da6a36b43874edf1, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -123,6 +123,26 @@ Material:
         first:
           name: _Parallax
         second: 0.02
+      data:
+        first:
+          name: _SpecularVal
+        second: 1.5
+      data:
+        first:
+          name: _SmoothnessVal
+        second: 1
+      data:
+        first:
+          name: _EmissionVal
+        second: 0.25
+      data:
+        first:
+          name: _TimeLeft
+        second: 0.6700213
+      data:
+        first:
+          name: _Penalty
+        second: 0.6565303
       data:
         first:
           name: _ZWrite
@@ -155,26 +175,6 @@ Material:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: _SpecularVal
-        second: 1.5
-      data:
-        first:
-          name: _SmoothnessVal
-        second: 1
-      data:
-        first:
-          name: _EmissionVal
-        second: 0.25
-      data:
-        first:
-          name: _TimeLeft
-        second: 1
-      data:
-        first:
-          name: _Penalty
-        second: 0.98333305
     m_Colors:
       data:
         first:

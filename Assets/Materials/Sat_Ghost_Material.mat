@@ -38,7 +38,35 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _ShadowTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _FalloffTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Ramp
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _ParallaxMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ToonShade
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -78,34 +106,6 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Ramp
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _ToonShade
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _ShadowTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _FalloffTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -123,6 +123,10 @@ Material:
         first:
           name: PixelSnap
         second: 0
+      data:
+        first:
+          name: _Outline
+        second: 0.0077
       data:
         first:
           name: _Parallax
@@ -163,10 +167,6 @@ Material:
         first:
           name: _InvFade
         second: 3
-      data:
-        first:
-          name: _Outline
-        second: 0.0077
     m_Colors:
       data:
         first:
@@ -178,9 +178,9 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 0}
       data:
         first:
-          name: _TintColor
-        second: {r: 0, g: 1, b: 1, a: 0.05940173}
-      data:
-        first:
           name: _OutlineColor
         second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _TintColor
+        second: {r: 0, g: 1, b: 1, a: 0.09916646}
