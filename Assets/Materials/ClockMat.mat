@@ -170,11 +170,11 @@ Material:
       data:
         first:
           name: _TimeLeft
-        second: 0
+        second: 1
       data:
         first:
           name: _Penalty
-        second: -0.016666658
+        second: 0.98333305
     m_Colors:
       data:
         first:
