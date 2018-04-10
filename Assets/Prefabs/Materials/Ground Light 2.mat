@@ -6,11 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ClockMat
-  m_Shader: {fileID: 4800000, guid: 94015e8244f5f4b419f1e3b3f5c11101, type: 3}
+  m_Name: Ground Light 2
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -19,7 +19,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: b1e3f395a74e3964da111ba08bbe309b, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -41,34 +41,6 @@ Material:
           name: _ParallaxMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Emission
-        second:
-          m_Texture: {fileID: 2800000, guid: eccd10a2f715ab94ba936f574561ad27, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Specular
-        second:
-          m_Texture: {fileID: 2800000, guid: f89f5259cc42aad43bb51811bd9150a6, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Normal
-        second:
-          m_Texture: {fileID: 2800000, guid: 7a507b8e1337f764a9aa57e22f740550, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _EmissionPenalty
-        second:
-          m_Texture: {fileID: 2800000, guid: 82f809cd3d1fe484da6a36b43874edf1, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -125,26 +97,6 @@ Material:
         second: 0.02
       data:
         first:
-          name: _SpecularVal
-        second: 1.5
-      data:
-        first:
-          name: _SmoothnessVal
-        second: 1
-      data:
-        first:
-          name: _EmissionVal
-        second: 0.25
-      data:
-        first:
-          name: _TimeLeft
-        second: 0.8286205
-      data:
-        first:
-          name: _Penalty
-        second: 0.819568
-      data:
-        first:
           name: _ZWrite
         second: 1
       data:
@@ -183,4 +135,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: 0.90196085, g: 0.90196085, b: 0.90196085, a: 1}

@@ -9,7 +9,7 @@ public class RingControl : MonoBehaviour
     static public bool RingCol, RingRangeCol, isHitPath = false;
     static public float hitUV;
     public static List<string> calledfun = new List<string>();
-
+    public GameObject shockLight;
     void Start()
     {
 
@@ -22,34 +22,17 @@ public class RingControl : MonoBehaviour
         else
             GetComponent<Renderer>().material.color = Color.red;*/
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "path")
-        {
 
-        }
+    public void playShockLight() {
+        shockLight.SetActive(true);
+        shockLight.GetComponent<ParticleSystem>().Play();
+        StartCoroutine(stopshockLight(0.05f));
     }
 
-    void HitPath()
+    IEnumerator stopshockLight(float waittime)
     {
-        bool isCalled = false;
-        foreach (string fun in calledfun)
-        {
-            if (fun == "HitPath")
-                isCalled = true;
-        }
-
-        if (!isCalled)
-        {
-            calledfun.Add("HitPath");
-            isHitPath = true;
-            StartCoroutine(stopHit(1));
-        }
-
-    }
-    IEnumerator stopHit(float waittime) {
         yield return new WaitForSeconds(waittime);
-        calledfun.Remove("HitPath");
-        isHitPath = false;
+        shockLight.SetActive(false);
+        shockLight.GetComponent<ParticleSystem>().Stop();
     }
 }

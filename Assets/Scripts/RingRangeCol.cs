@@ -13,11 +13,14 @@ public class RingRangeCol : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
+        if(other.tag=="path")
         RingControl.RingRangeCol = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        RingControl.RingRangeCol = false;
+        if (other.tag == "path") {
+            RingControl.RingRangeCol = false;
+        }
     }
 }

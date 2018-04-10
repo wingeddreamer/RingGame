@@ -14,7 +14,7 @@ namespace zSpace.Core.Samples
 		public Part[] SatParts;
 		public GameObject[] SidePieces;
 		private ZCore _core = null;
-        public bool allOK;
+        public bool reachTarget =false;
         //for Camera rotator
         private float dampedvalue1 = 0, dampedvalue2 = 0, dampV1 = 0, dampV2 = 0;
 		[HideInInspector]
@@ -31,9 +31,9 @@ namespace zSpace.Core.Samples
 		public Quaternion grabbedObjectRotation;
 		[HideInInspector]
 		public bool lastFrameInpos=false;
-
-		// Use this for initialization
-		void Start ()
+        public static List<string> calledfun = new List<string>();
+        // Use this for initialization
+        void Start ()
 		{
 			_core = GameObject.FindObjectOfType<ZCore> ();
 
@@ -93,13 +93,14 @@ namespace zSpace.Core.Samples
                 //position angle judgement
                 bool posOK = (Vector3.Distance(grabbedObjectPosition, GrabPart.GhostPart.transform.position) < GrabPart.PositionTolerance);
                 bool angOK = (Quaternion.Angle(grabbedObjectRotation, GrabPart.GhostPart.transform.rotation) < GrabPart.AngleTolerance);
-                
+                bool allOK;
                 if (UI_Control.useAngleCheck)
                     allOK = posOK && angOK;
                 else
                     allOK = posOK;
                 if (allOK)
                 {
+                    isReachTarget();
                     CurrentlyGrabbedObject.transform.position = GrabPart.GhostPart.transform.position;
                     CurrentlyGrabbedObject.transform.eulerAngles = GrabPart.GhostPart.transform.eulerAngles;
                     GhostMat.SetColor("_TintColor", new Color(0.0f, 1.0f, 0.0f, 0.1f));
@@ -241,7 +242,32 @@ namespace zSpace.Core.Samples
 				}
 			}
 		}
-	}
+        void isReachTarget()
+        {
+            bool isCalled = false;
+            foreach (string fun in calledfun)
+            {
+                if (fun == "isReachTarget")
+                    isCalled = true;
+            }
+
+            if (!isCalled)
+            {
+                calledfun.Add("isReachTarget");
+                reachTarget = true;
+                StartCoroutine(stopReach(2));
+            }
+        }
+
+
+        IEnumerator stopReach(float waittime)
+        {
+            yield return new WaitForSeconds(waittime);
+            calledfun.Remove("isReachTarget");
+        }
+    }
+
+   
 
 	[System.Serializable]
 	public class Part

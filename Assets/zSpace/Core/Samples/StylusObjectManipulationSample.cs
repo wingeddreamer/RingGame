@@ -147,7 +147,7 @@ namespace zSpace.Core.Samples
 		// Private Enumerations
 		//////////////////////////////////////////////////////////////////
 
-		private enum StylusState
+		public enum StylusState
 		{
 			Idle = 0,
 			Grab = 1,
@@ -168,7 +168,7 @@ namespace zSpace.Core.Samples
 		private LineRenderer _stylusBeamRenderer = null;
 		private float _stylusBeamLength = DEFAULT_STYLUS_BEAM_LENGTH;
 
-		private StylusState _stylusState = StylusState.Idle;
+		public StylusState _stylusState = StylusState.Idle;
 		private GameObject _grabObject = null;
 		private Vector3 _initialGrabOffset = Vector3.zero;
 		private Quaternion _initialGrabRotation = Quaternion.identity;

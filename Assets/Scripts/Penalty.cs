@@ -33,6 +33,21 @@ public class Penalty : MonoBehaviour {
         }
 	}
 
+    public void startPenalty()
+    {
+        CCscript.exePenalty();
+        inPenaltyMode = true;
+        Invoke("endPenalty", 0.25f);
+        errLight.SetActive(true);
+        lightning.SetActive(true);
+        ring.GetComponent<Renderer>().sharedMaterial.SetColor("_EmissionColor", Color.red);
+        ring.GetComponent<Renderer>().sharedMaterial.color = Color.red;
+        cameraShake(0.5f);
+    }
+
+
+
+
     void cameraShake(float vibration)
     {
         targetCamera.transform.localPosition = camOriginalPos + new Vector3(Random.Range(-vibration, vibration), Random.Range(-vibration, vibration),Random.Range(-vibration, vibration));

@@ -6,7 +6,6 @@ public class LevelFailVisControl : MonoBehaviour {
     public bool Level1Fail = false, Level2Fail = false, Level3Fail = false;
     public Animator[] Level1Objs, Level2Objs, Level3Objs;
     public GameObject[] Level3HideObjs;
-
 	// Use this for initialization
 	void Start () {
 	
