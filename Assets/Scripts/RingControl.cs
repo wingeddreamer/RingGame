@@ -26,7 +26,7 @@ public class RingControl : MonoBehaviour
     public void playShockLight() {
         shockLight.SetActive(true);
         shockLight.GetComponent<ParticleSystem>().Play();
-        StartCoroutine(stopshockLight(0.05f));
+       // StartCoroutine(stopshockLight(0.05f));
     }
 
     IEnumerator stopshockLight(float waittime)

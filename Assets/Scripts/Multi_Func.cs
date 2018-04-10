@@ -52,7 +52,6 @@ namespace zSpace.Core.Samples
 		// Update is called once per frame
 		void Update ()
 		{
-
 			//Make Ghost Material Change over time
 			GhostMat.SetColor ("_TintColor", new Color (0f, 1.0f, 1.0f, 0.07f + Mathf.Sin (Time.fixedTime * 2) * 0.03f));
 
@@ -162,15 +161,15 @@ namespace zSpace.Core.Samples
 				}
 			}
 
-			//Return All Parts
-			if (Input.GetKeyDown (KeyCode.Space) || (UI_Control.useTwoButtonDis&&!_core.IsTargetButtonPressed (ZCore.TargetType.Primary, 0)&&_core.IsTargetButtonPressed (ZCore.TargetType.Primary, 1)&&_core.IsTargetButtonPressed (ZCore.TargetType.Primary, 2))) {
-				for (int i = 0; i < SatParts.Length; i++) {
-					SatParts [i].OnWayHome = true;
-					SatParts [i].InTargetPosition = false;
-					SatParts [i].allowGrab = true;
-					en_disableGrab (SatParts[i].RealPart, true);
-				}
-			}
+			////Return All Parts
+			//if (Input.GetKeyDown (KeyCode.Space) || (UI_Control.useTwoButtonDis&&!_core.IsTargetButtonPressed (ZCore.TargetType.Primary, 0)&&_core.IsTargetButtonPressed (ZCore.TargetType.Primary, 1)&&_core.IsTargetButtonPressed (ZCore.TargetType.Primary, 2))) {
+			//	for (int i = 0; i < SatParts.Length; i++) {
+			//		SatParts [i].OnWayHome = true;
+			//		SatParts [i].InTargetPosition = false;
+			//		SatParts [i].allowGrab = true;
+			//		en_disableGrab (SatParts[i].RealPart, true);
+			//	}
+			//}
 
 			//Update Lastgrabbed Object
 			LastGrabbedObject = CurrentlyGrabbedObject;
@@ -264,6 +263,9 @@ namespace zSpace.Core.Samples
         {
             yield return new WaitForSeconds(waittime);
             calledfun.Remove("isReachTarget");
+        }
+        public void VibratePen() {
+            _core.StartTargetVibration(ZCore.TargetType.Primary, 0.1f, 1f, 1, 0.1f);
         }
     }
 

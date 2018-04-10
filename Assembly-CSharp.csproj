@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Zview.cs" />
      <Compile Include="Assets\Scripts\level1Controller.cs" />
      <Compile Include="Assets\Scripts\level2Controller.cs" />
+     <Compile Include="Assets\Scripts\level3Controller.cs" />
      <Compile Include="Assets\Scripts\test.cs" />
      <Compile Include="Assets\Scripts\testMOve.cs" />
      <Compile Include="Assets\zSpace\Core\Samples\CameraNavigationSample.cs" />

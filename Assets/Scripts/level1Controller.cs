@@ -87,7 +87,8 @@ public class level1Controller : MonoBehaviour {
             calledfun.Remove("StartPlay");
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             MeshRenderer[] meshrenders = gameObject.GetComponentsInChildren<MeshRenderer>();
-            foreach (MeshRenderer meshren in meshrenders) {
+            foreach (MeshRenderer meshren in meshrenders)
+            {
                 meshren.enabled = false;
             }
             particle.Play();
