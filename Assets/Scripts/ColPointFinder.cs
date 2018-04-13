@@ -4,15 +4,14 @@ using System.Collections;
 public class ColPointFinder : MonoBehaviour {
 
     public GameObject finder1, finder2, finderParent;
-
 	void Start () {
-	
-	}
-	
-	void Update () {
+    }
+
+    void Update()
+    {
         RaycastHit hitInfo;
         float rotAngle = 0, step = 15;
-        while(!Physics.Raycast(finder1.transform.position, finder2.transform.position- finder1.transform.position, out hitInfo, (finder2.transform.position - finder1.transform.position).magnitude,1<<13))
+        while (!Physics.Raycast(finder1.transform.position, finder2.transform.position - finder1.transform.position, out hitInfo, (finder2.transform.position - finder1.transform.position).magnitude, 1 << 13))
         {
             rotAngle += step;
             finderParent.transform.eulerAngles = new Vector3(finderParent.transform.eulerAngles.x, finderParent.transform.eulerAngles.y, rotAngle);
@@ -23,6 +22,14 @@ public class ColPointFinder : MonoBehaviour {
             if (rotAngle == 1080)
                 break;
         }
-        RingControl.hitUV=hitInfo.textureCoord.x;
-	}
+        if (RingControl.hitUV > 0.05f && hitInfo.textureCoord.x == 0)
+        {
+        }
+        else {
+            RingControl.hitUV = hitInfo.textureCoord.x;
+        }
+    }
+    public void resetUV() {
+        RingControl.hitUV = 0;
+    }
 }

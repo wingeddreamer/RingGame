@@ -17,16 +17,16 @@ public class Penalty : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if(!CCscript.timeOut)
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                CCscript.exePenalty();
-                inPenaltyMode = true;
-                Invoke("endPenalty",0.25f);
-                errLight.SetActive(true);
-                lightning.SetActive(true);
-                ring.GetComponent<Renderer>().sharedMaterial.SetColor("_EmissionColor", Color.red);
-                ring.GetComponent<Renderer>().sharedMaterial.color = Color.red;
-            }
+            //if (Input.GetKeyDown(KeyCode.E))
+            //{
+            //    CCscript.exePenalty();
+            //    inPenaltyMode = true;
+            //    Invoke("endPenalty",0.25f);
+            //    errLight.SetActive(true);
+            //    lightning.SetActive(true);
+            //    ring.GetComponent<Renderer>().sharedMaterial.SetColor("_EmissionColor", Color.red);
+            //    ring.GetComponent<Renderer>().sharedMaterial.color = Color.red;
+            //}
         if (inPenaltyMode)
         {
             cameraShake(0.5f);

@@ -5,8 +5,7 @@ using zSpace.Core.Samples;
 using System.Collections.Generic;
 public class GameController : MonoBehaviour
 {
-
-    public int Level1TotalTime = 60, Level2TotalTime = 90, Level3TotalTime = 120, penatyTime = 5;
+    public int Level1TotalTime = 60, Level2TotalTime = 90, Level3TotalTime = 120, penatyTime1 = 5, penatyTime2 = 5, penatyTime3 = 5;
     public bool isInTestMode = false;
     public GameObject ring, ringTarget, level2Text, level3Text, FailText, level1, level2, level3;
     public GameObject ring1Pos, ring2Pos, ring3Pos;
@@ -16,9 +15,13 @@ public class GameController : MonoBehaviour
     ClockControl clockController;
     EnterExitPlayMode lightController;
     Multi_Func multiFuc;
+    StylusObjectManipulationSample smultifun;
     ParticleControl fireWork;
     Penalty errorcontroller;
     LevelFailVisControl failcontroller;
+    public ColPointFinder CPF;
+    public RingRangeCol RRC;
+
     public static List<string> calledfun = new List<string>();
     bool isLevel1Finished = false, isLevel2Finished = false, islevel3Finished = false;
     /// <summary>
@@ -30,26 +33,26 @@ public class GameController : MonoBehaviour
     public static int currState = 0;
     // Use this for initialization
     void Start() { 
-        en_disableGrab(false);
         clockController = gameObject.GetComponent<ClockControl>();
         lightController = gameObject.GetComponent<EnterExitPlayMode>();
         fireWork=gameObject.GetComponent<ParticleControl>();
         errorcontroller = gameObject.GetComponent<Penalty>();
         failcontroller = gameObject.GetComponent<LevelFailVisControl>();
         multiFuc = OldScript.GetComponent<Multi_Func>();
+        smultifun = OldScript.GetComponent<StylusObjectManipulationSample>();
         InitLevel(1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown && currState==0)
-        {
-            currState = 1;
-            startLevel(1);
-            calledfun.Remove("replay");
+        if (currState == 0) {
+            if (Input.anyKeyDown|| smultifun.isanyButtonPressed)
+            {
+                currState = 1;
+                startLevel(1);
+            }
         }
-
         if (currState == 1)
         {
             if (!clockController.timeOut)
@@ -61,17 +64,13 @@ public class GameController : MonoBehaviour
                 }
                 else
                 {
-
                     //撞击路径惩罚
-                    if (RingControl.isHitPath)
+                    if (RingControl.isHitPath|| !RingControl.RingRangeCol)
                     {
-                        hitPath();
-                    }
-                    //离开路径归位
-                    if (!RingControl.RingRangeCol)
-                    {
+                        
                         en_disableGrab(false);
                         MoveRingBack();
+                        hitPath();
                     }
                     else {
                         en_disableGrab(true);
@@ -85,7 +84,6 @@ public class GameController : MonoBehaviour
                 en_disableGrab(false);
             }
         }
-
         if (currState == 2)
         {
             if (!clockController.timeOut)
@@ -97,20 +95,18 @@ public class GameController : MonoBehaviour
                 }
                 else
                 {
-                    if (RingControl.isHitPath)
+                    if (RingControl.isHitPath || !RingControl.RingRangeCol)
                     {
-                        hitPath();
-                    }
 
-                    if (!RingControl.RingRangeCol)
-                    {
                         en_disableGrab(false);
                         MoveRingBack();
+                        hitPath();
                     }
                     else
                     {
                         en_disableGrab(true);
                     }
+                   
                 }
             }
             else {
@@ -121,7 +117,6 @@ public class GameController : MonoBehaviour
             }
                
         }
-        
         if (currState == 3)
         {
             if (!clockController.timeOut)
@@ -133,15 +128,12 @@ public class GameController : MonoBehaviour
                 }
                 else
                 {
-                    if (RingControl.isHitPath)
+                    if (RingControl.isHitPath || !RingControl.RingRangeCol)
                     {
-                        hitPath();
-                    }
 
-                    if (!RingControl.RingRangeCol)
-                    {
                         en_disableGrab(false);
                         MoveRingBack();
+                        hitPath();
                     }
                     else
                     {
@@ -163,21 +155,22 @@ public class GameController : MonoBehaviour
         {
             replay();
         }
-
     }
+
     void InitLevel(int levelNum)
     {
+        CPF.resetUV();
         switch (levelNum)
         {
             case 1:
 
                 isShowRing(true);
-                clockController.initializeClock(Level1TotalTime, penatyTime);
+                clockController.initializeClock(Level1TotalTime, penatyTime1);
                 level1.SetActive(true);
                 level2.SetActive(false);
                 level3.SetActive(false);
                 level1.GetComponent<level1Controller>().BeforePlay();
-                en_disableGrab(false);
+                //en_disableGrab(false);
                 lightController.IsTurnOff(false);
                 //设置ring的起始位置
                 {
@@ -197,7 +190,7 @@ public class GameController : MonoBehaviour
                 }
                 break;
             case 2:
-                clockController.initializeClock(Level2TotalTime, penatyTime);
+                clockController.initializeClock(Level2TotalTime, penatyTime2);
                 level2.SetActive(true);
                 en_disableGrab(false);
                 startLevel(2);
@@ -214,12 +207,12 @@ public class GameController : MonoBehaviour
                         ring.transform.position = new Vector3(-14.89f, 15.5f, 0.021f);
                         ring.transform.rotation = Quaternion.Euler(0, -90f, -270f);
                     }
-                    ringTarget.transform.position = new Vector3(-5.6f, 7.09f, -0.17f);
-                    ringTarget.transform.rotation = Quaternion.Euler(22.0381f, -90f, -270f);
+                    ringTarget.transform.position = new Vector3(-6.82f, 6.599f, -0.17f);
+                    ringTarget.transform.rotation = Quaternion.Euler(28.2326f, -90f, -270f);
                 }
                 break;
             case 3:
-                clockController.initializeClock(Level3TotalTime, penatyTime);
+                clockController.initializeClock(Level3TotalTime, penatyTime3);
                 level3.SetActive(true);
                 en_disableGrab(false);
                 startLevel(3);
@@ -248,6 +241,7 @@ public class GameController : MonoBehaviour
     {
         en_disableGrab(true);
         isShowRing(true);
+        calledfun.Remove("replay");
         switch (levelNum)
         {
             case 1:
@@ -256,9 +250,11 @@ public class GameController : MonoBehaviour
                 break;
             case 2:
                 level2.GetComponent<level2Controller>().StartPlay();
+                currState = 2;
                 break;
             case 3:
                 level3.GetComponent<level3Controller>().StartPlay();
+                currState = 3;
                 break;
 
             default:
@@ -269,36 +265,34 @@ public class GameController : MonoBehaviour
     }
     void FinishLevel(int levelNum)
     {
+        en_disableGrab(false);
+        RingControl.isHitPath = false;
+        RingControl.RingRangeCol = true;
         switch (levelNum)
         {
             case 1:
+                lightController.IsTurnOff(false);
                 level1.GetComponent<level1Controller>().finishPlay();
-                
                 StartCoroutine(ShowWithdelay(2, level2Text,true));
                 StartCoroutine(ShowWithdelay(2, level1, false));
-                currState = 2;
-                OldScript.GetComponent<Multi_Func>().reachTarget = false;
-
+                
                 break;
             case 2:
+                lightController.IsTurnOff(false);
                 level2.GetComponent<level2Controller>().finishPlay();
                 StartCoroutine(ShowWithdelay(2, level3Text, true));
                 StartCoroutine(ShowWithdelay(2, level2, false));
-                OldScript.GetComponent<Multi_Func>().reachTarget = false;
-                currState = 3;
                 break;
             case 3:
                 level3.GetComponent<level3Controller>().finishPlay();
-                currState = 4;
                 break;
             default:
                 break;
         }
 
+        OldScript.GetComponent<Multi_Func>().reachTarget = false;
         isShowRing(false);
         clockController.endCountDown();
-        lightController.IsTurnOff(false);
-        //ringState.allOK = false;
     }
     
     void en_disableGrab(bool isEnable)
@@ -310,6 +304,11 @@ public class GameController : MonoBehaviour
         }
         OldScript.GetComponent<Multi_Func>().enabled = isEnable;
         OldScript.GetComponent<StylusObjectManipulationSample>().enabled = isEnable;
+    }
+
+    void en_disableDetect(bool isEnable)
+    {
+        RRC.enabled = isEnable;
     }
 
     void replay()
@@ -338,6 +337,7 @@ public class GameController : MonoBehaviour
             lightController.IsTurnOff(false);
             OldScript.GetComponent<Multi_Func>().reachTarget = false;
             currState = 0;
+            smultifun.isanyButtonPressed = false;
         }
           
     }
@@ -360,8 +360,8 @@ public class GameController : MonoBehaviour
             calledfun.Add("hitPath");
             ring.GetComponent<RingControl>().playShockLight();
             errorcontroller.startPenalty();
-            //1s后才能再次撞击，防止反复碰撞减时间
-            StartCoroutine(enableHit(1f));
+            //0.5s后才能再次撞击，防止反复碰撞减时间
+            StartCoroutine(enableHit(0.5f));
             OldScript.GetComponent<Multi_Func>().VibratePen();
         }
     }
@@ -375,10 +375,12 @@ public class GameController : MonoBehaviour
                 isCalled = true;
         }
 
-       // if (!isCalled)
+        if (!isCalled)
         {
             calledfun.Add("MoveRingBack");
-            switch (currState) {
+
+            switch (currState)
+            {
                 case 1:
                     ring.transform.position = ring1Pos.transform.position;
                     ring.transform.rotation = ring1Pos.transform.rotation;
@@ -394,21 +396,13 @@ public class GameController : MonoBehaviour
                 default:
                     Debug.Log("game in wrong state");
                     break;
-
             }
-            StartCoroutine(enableMoveRingBack(0.1f));
+            StartCoroutine(EnableLater(0.1f));
         }
     }
 
-
     void resetRing()
     {
-        //ring1Pos.transform.localPosition = new Vector3(-15.9f, 4.5f, 0.0f);
-        //ring1Pos.transform.localRotation = new Quaternion(-0.5f, -0.5f, 0.5f, 0.5f);
-        //ring2Pos.transform.localPosition = new Vector3(0f, 0f, 0f);
-        //ring2Pos.transform.localRotation = new Quaternion(0.6f, 0.6f, -0.4f, -0.4f);
-        //ring3Pos.transform.localPosition = new Vector3(-11.5f, 6.7f, -11.3f);
-        //ring3Pos.transform.localRotation = new Quaternion(0.6f, 0.6f, -0.4f, -0.4f);
         ring1Pos.GetComponent<test>().resetGhostPos();
         ring2Pos.GetComponent<test>().resetGhostPos();
         ring3Pos.GetComponent<test>().resetGhostPos();
@@ -420,13 +414,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(waittime);
         calledfun.Remove("hitPath");
     }
-
-    IEnumerator enableMoveRingBack(float waittime)
-    {
-        yield return new WaitForSeconds(waittime);
-        
-        calledfun.Remove("MoveRingBack");
-    }
+    
     IEnumerator ShowWithdelay(float waittime, GameObject obToshowOrHide,bool isShow)
     {
         disableKey = true;
@@ -441,6 +429,13 @@ public class GameController : MonoBehaviour
         InitLevel(levelNum);
         disableKey = false;
     }
+
+    IEnumerator EnableLater(float waittime)
+    {
+        yield return new WaitForSeconds(waittime);
+        calledfun.Remove("MoveRingBack");
+    }
+
 
     void isShowRing(bool isEnable) {
         ring.GetComponent<MeshRenderer>().enabled = isEnable;

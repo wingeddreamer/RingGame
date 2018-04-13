@@ -20,16 +20,6 @@ public class RingCol : MonoBehaviour {
             HitPath();
         }
     }
-    
-    private void OnTriggerStay(Collider other)
-    {
-        RingControl.RingCol = true;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        RingControl.RingCol = false;
-    }
 
     void HitPath()
     {
@@ -44,7 +34,7 @@ public class RingCol : MonoBehaviour {
         {
             calledfun.Add("HitPath");
             RingControl.isHitPath = true;
-            StartCoroutine(stopHit(1));
+            StartCoroutine(stopHit(0.01f));
         }
 
     }

@@ -5,7 +5,7 @@ public class test : MonoBehaviour {
 
     public AnimationClip testAni;
     public GameObject ring;
-    public float pos=0;
+    public static float pos = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -16,14 +16,13 @@ public class test : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        pos = RingControl.hitUV;
-        GetComponent<Animation>()["Take 001"].normalizedTime = pos;
-
-       // print(pos);
+            pos = RingControl.hitUV;
+            GetComponent<Animation>()["Take 001"].normalizedTime = pos;
     }
     public void resetGhostPos() {
         GetComponent<Animation>().Play();
-        pos = 0;
         GetComponent<Animation>()["Take 001"].speed = 0f;
+        pos = 0;
+        GetComponent<Animation>()["Take 001"].normalizedTime = pos;
     }
 }

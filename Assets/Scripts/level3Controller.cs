@@ -18,24 +18,30 @@ public class level3Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (ring3pos.GetComponent<test>().pos>0.229f) {
+
+        if (test.pos > 0.229f)
+        {
             shape1.SetActive(true);
         }
 
-        if (ring3pos.GetComponent<test>().pos > 0.6f)
+        if (test.pos > 0.6f)
         {
             shape2.SetActive(true);
         }
 
-        if (ring3pos.GetComponent<test>().pos > 0.9229f)
+        if (test.pos > 0.9f)
         {
             shape3.SetActive(true);
         }
-        if (ring3pos.GetComponent<test>().pos > 0.995f)
+        if (test.pos > 0.985f)
         {
             shape4.SetActive(true);
         }
-	}
+        if (test.pos > 0.997f)
+        {
+            shape5.SetActive(true);
+        }
+    }
 
     public void StartPlay()
     {
@@ -55,6 +61,7 @@ public class level3Controller : MonoBehaviour {
             shape2.SetActive(false);
             shape3.SetActive(false);
             shape4.SetActive(false);
+            shape5.SetActive(false);
         }
 
     }

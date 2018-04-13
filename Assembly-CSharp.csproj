@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\ColPointFinder.cs" />
      <Compile Include="Assets\Scripts\EnterExitPlayMode.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\Hidepiece.cs" />
      <Compile Include="Assets\Scripts\LightCoatControl.cs" />
      <Compile Include="Assets\Scripts\LookAtCamera.cs" />
      <Compile Include="Assets\Scripts\Multi_Func.cs" />

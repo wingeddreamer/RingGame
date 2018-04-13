@@ -72,15 +72,24 @@ namespace zSpace.Core.Samples
 			//Rotate camera if no object is grabbed
 			float secondButtonPressed = 0, thirdButtonPressed = 0;
 			if (CurrentlyGrabbedObject == null) {
-				if (_core.IsTargetButtonPressed (ZCore.TargetType.Primary, 1))
-					secondButtonPressed = 20.0f;
-				else
-					secondButtonPressed = 0.0f;
-				if (_core.IsTargetButtonPressed (ZCore.TargetType.Primary, 2))
-					thirdButtonPressed = 20.0f;
-				else
-					thirdButtonPressed = 0.0f;
-			}
+				//if (_core.IsTargetButtonPressed (ZCore.TargetType.Primary, 1))
+				//	secondButtonPressed = 20.0f;
+				//else
+				//	secondButtonPressed = 0.0f;
+				//if (_core.IsTargetButtonPressed (ZCore.TargetType.Primary, 2))
+				//	thirdButtonPressed = 20.0f;
+				//else
+				//	thirdButtonPressed = 0.0f;
+
+                if (_core.IsTargetButtonPressed(ZCore.TargetType.Primary, 2))
+                    secondButtonPressed = 20.0f;
+                else
+                    secondButtonPressed = 0.0f;
+                if (_core.IsTargetButtonPressed(ZCore.TargetType.Primary, 1))
+                    thirdButtonPressed = 20.0f;
+                else
+                    thirdButtonPressed = 0.0f;
+            }
 			dampedvalue1 = Mathf.SmoothDamp (dampedvalue1, secondButtonPressed, ref dampV1, 0.5f);
 			dampedvalue2 = Mathf.SmoothDamp (dampedvalue2, thirdButtonPressed, ref dampV2, 0.5f);
 			CamRotator.transform.Rotate (new Vector3 (0.0f, (dampedvalue1 - dampedvalue2) * Time.deltaTime, 0.0f));

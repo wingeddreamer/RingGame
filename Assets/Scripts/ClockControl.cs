@@ -42,8 +42,8 @@ public class ClockControl : MonoBehaviour {
 	}
 	
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.C)) countDown = true;
-        if (Input.GetKeyDown(KeyCode.D)) countDown = false;
+        //if (Input.GetKeyDown(KeyCode.C)) countDown = true;
+        //if (Input.GetKeyDown(KeyCode.D)) countDown = false;
         if (countDown)
             if (leftTime - Time.deltaTime > 0)
                 leftTime -= Time.deltaTime;

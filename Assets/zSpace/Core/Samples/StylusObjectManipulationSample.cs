@@ -14,6 +14,7 @@ namespace zSpace.Core.Samples
 {
 	public class StylusObjectManipulationSample : MonoBehaviour
 	{
+        public bool isanyButtonPressed;
 		public Material lightbeamMat;
 		public GameObject lightbeamTarget;
 		public Multi_Func Mulfun;
@@ -41,8 +42,13 @@ namespace zSpace.Core.Samples
 
 		void Update ()
 		{
-			// Grab the latest stylus pose and button state information.
-			ZCore.Pose pose = _core.GetTargetPose (ZCore.TargetType.Primary, ZCore.CoordinateSpace.World);
+            if (_core.IsTargetButtonPressed(ZCore.TargetType.Primary, 0) || _core.IsTargetButtonPressed(ZCore.TargetType.Primary, 1)|| _core.IsTargetButtonPressed(ZCore.TargetType.Primary, 2))
+            {
+                isanyButtonPressed = true;
+                print(isanyButtonPressed);
+            }
+            // Grab the latest stylus pose and button state information.
+            ZCore.Pose pose = _core.GetTargetPose (ZCore.TargetType.Primary, ZCore.CoordinateSpace.World);
 			bool isButtonPressed = _core.IsTargetButtonPressed (ZCore.TargetType.Primary, 0);
 			if(!isButtonPressed) Mulfun.CurrentlyGrabbedObject = null;
 
